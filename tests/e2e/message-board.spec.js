@@ -16,4 +16,5 @@ test('Tạo và tìm thông điệp', async ({ page }) => {
   await page.locator('#q').fill(msg);
   await page.locator('#search').click();
   await expect(page.locator('#list li').filter({ hasText: msg })).toHaveCount(1);
+  await expect(page.locator('#content')).toHaveText('ChuoiSaiCoY');
 });
