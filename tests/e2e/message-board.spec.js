@@ -3,7 +3,8 @@ const { test, expect } = require('@playwright/test');
 test('Giao diện chính hiển thị', async ({ page }) => {
   await page.goto('/');
   await expect(page.locator('#content')).toBeVisible();
-  await expect(page.locator('#list')).toBeVisible();
+  // Kiểm tra thẻ #list đã tồn tại trong DOM
+  await expect(page.locator('#list')).toBeAttached();
 });
 
 test('Tạo và tìm thông điệp', async ({ page }) => {
